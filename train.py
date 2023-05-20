@@ -12,14 +12,12 @@ import os
 import pickle
 import sklearn
 
-
-
 # ### Load the data
 
 # In[2]:
 
 
-train_data = pd.read_csv('../train.csv')
+train_data = pd.read_csv('../data/train.csv')
 
 
 # ### Train/test split
