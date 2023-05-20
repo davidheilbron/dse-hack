@@ -19,7 +19,7 @@ import sklearn
 # In[2]:
 
 
-train_data = pd.read_csv(r'C:\\USers\\Administrator\\Documents\\GitHub\\Projects\\Hackathon\\data\\train.csv')
+train_data = pd.read_csv('../train.csv')
 
 
 # ### Train/test split
