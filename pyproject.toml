@@ -6,7 +6,7 @@ authors = ["David Fernandez <david.fernandezvictoria@studenti.unimi.it>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.7"
+python = "^3.7"
 scikit-learn = "1.0"
 bornrule = "^0.2.0"
 sqlalchemy = "^2.0.14"
