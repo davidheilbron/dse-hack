@@ -29,8 +29,6 @@ y = train_data["Survived"]
 
 features = ["Pclass", "Sex", "SibSp", "Parch"]
 X = pd.get_dummies(train_data[features])
-X_test = pd.get_dummies(test_data[features])
-
 
 # ### Create an ensamble classifier
 
