@@ -34,7 +34,7 @@ def read_root(text: str = ""):
 
 class Features(BaseModel):
     Pclass: int
-    Sex: chr
+    Sex: str
     SibSp: int
     Parch: int
 
