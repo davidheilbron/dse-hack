@@ -1,13 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Local predictions with FastAPI
-
-# In[1]:
-
-
 import requests
 import pandas as pd
+import json
 
 
 # ### Load data
@@ -18,8 +11,10 @@ features = ["Pclass", "Sex", "SibSp", "Parch"]
 X = pd.get_dummies(train_data[features])
 
 # ### Convert to json
-json = [X.iloc[i].to_dict() for i in range(X.shape[0])]
+#json = [X.iloc[i].to_dict() for i in range(X.shape[0])]
 
+# Convert to JSON
+data_json = X.iloc[0:10].to_json(orient='records')
 
 # ### Predict
 
