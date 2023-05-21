@@ -11,26 +11,17 @@ import pandas as pd
 
 
 # ### Load data
+train_data = pd.read_csv('../data/train.csv')
+y = train_data["Survived"]
 
-# In[2]:
-
-
-zoo = pd.read_csv("../data/zoo.csv")
-
+features = ["Pclass", "Sex", "SibSp", "Parch"]
+X = pd.get_dummies(train_data[features])
 
 # ### Convert to json
-
-# In[3]:
-
-
-X = zoo.iloc[:, 1:-1]
 json = [X.iloc[i].to_dict() for i in range(X.shape[0])]
 
 
 # ### Predict
-
-# In[4]:
-
 
 url = 'http://127.0.0.1:8000/predict/'
 res = requests.post(url, json=json)

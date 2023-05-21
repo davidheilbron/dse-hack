@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 
 app = FastAPI(
-    title="Zoo Animal CLassification",
+    title="Titanic Survival CLassification",
     version="0.1.0",
 )
 
@@ -32,27 +32,14 @@ def read_root(text: str = ""):
         return text
 
 
-class Animal(BaseModel):
-    hair: int
-    feathers: int
-    eggs: int
-    milk: int
-    airborne: int
-    aquatic: int
-    predator: int
-    toothed: int
-    backbone: int
-    breathes: int
-    venomous: int
-    fins: int
-    legs: int
-    tail: int
-    domestic: int
-    catsize: int
-
+class Features(BaseModel):
+    Pclass: int
+    Sex: chr
+    SibSp: int
+    Parch: int
 
 @app.post("/predict/")
-def predict(animals: List[Animal]) -> List[str]:
-    X = pd.DataFrame([dict(animal) for animal in animals])
+def predict(persons: List[Features]) -> List[str]:
+    X = pd.DataFrame([dict(person) for person in persons])
     y_pred = model.predict(X)
     return list(y_pred)
