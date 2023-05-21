@@ -22,3 +22,4 @@ model.fit(X, y)
 
 pickle.dump(model, open('model.pkl', 'wb'))
 
+
